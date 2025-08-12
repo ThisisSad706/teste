@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Técnicas de Estudo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        ul, li {
+            list-style-type: none;
+            padding: 5px;
+        }
+        .caixa {
+            background: rgb(255, 255, 255);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+<html>
+<head>
+    <title>Título da Página</title>
+    <style>
+        body {
+            background-color: #ffffff; 
+            color: #000000; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caixa">
+        <h2>Técnicas de Estudo</h2>
+        <ul id="tecnicas"></ul>
+    </div>
+
+    <div class="caixa">
+        <h2>Calendário</h2>
+        <ul id="calendario"></ul>
+    </div>
+
+    <div class="caixa">
+        <h2>Anotações</h2>
+        <ul id="anotacoes"></ul>
+    </div>
+
+    <script>
+        // Classe em JavaScript equivalente à sua em Python
+        class TecnicasEstudo {
+            constructor() {
+                this.tecnicas = [
+                    "Resumos",
+                    "Mapas Mentais",
+                    "Flashcards",
+                    "Ensinar a Alguém",
+                    "Estudo em Grupo",
+                    "Prática Distribuída",
+                    "Técnica Pomodoro",
+                    "Leitura Ativa",
+                    "Gravações de Áudio",
+                    "Simulados",
+                    "Anotações Digitais",
+                    "Aplicativos de Estudo",
+                    "Revisão Espacial",
+                    "Estudo com Música",
+                    "Autoavaliação"
+                ];
+                this.calendario = {};
+                this.anotacoes = [];
+            }
+
+            adicionar_evento(data, evento) {
+                this.calendario[data] = evento;
+            }
+
+            adicionar_anotacao(anotacao) {
+                this.anotacoes.push(anotacao);
+            }
+
+            mostrar_tecnicas() {
+                return this.tecnicas;
+            }
+
+            mostrar_calendario() {
+                return this.calendario;
+            }
+
+            mostrar_anotacoes() {
+                return this.anotacoes;
+            }
+        }
+
+        // Criar objeto e adicionar dados
+        const estudo = new TecnicasEstudo();
+        estudo.adicionar_evento("2023-10-01", "Revisar Matemática");
+        estudo.adicionar_anotacao("Focar em exercícios de álgebra");
+
+        // Preencher HTML
+        const tecnicasEl = document.getElementById("tecnicas");
+        estudo.mostrar_tecnicas().forEach(t => {
+            tecnicasEl.innerHTML += `<li>📚 ${t}</li>`;
+        });
+
+        const calendarioEl = document.getElementById("calendario");
+        for (let data in estudo.mostrar_calendario()) {
+            calendarioEl.innerHTML += `<li>📅 ${data}: ${estudo.mostrar_calendario()[data]}</li>`;
+        }
+
+        const anotacoesEl = document.getElementById("anotacoes");
+        estudo.mostrar_anotacoes().forEach(a => {
+            anotacoesEl.innerHTML += `<li>📝 ${a}</li>`;
+        });
+    </script>
+
+</body>
+</html>
